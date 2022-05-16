@@ -46,6 +46,11 @@ iframe {
   border: 0
 }
 
+h1 {
+  font-size: $h1;
+  line-height: $h1-lh;
+  letter-spacing: $h1-ls;
+}
 h2 {
   font-size: $h2;
   line-height: $h2-lh;

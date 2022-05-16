@@ -3,6 +3,7 @@ import './suggestion-list.scss';
 import SuggestionItem from "../SuggestionItem/SuggestionItem";
 import {useDispatch, useSelector} from "react-redux";
 import {initialSuggestion} from "../../store/slices/suggestionSlice";
+import SuggestionEmpty from "../SuggestionEmpty/SuggestionEmpty";
 
 const SuggestionList = () => {
     const dispatch = useDispatch();
@@ -15,7 +16,9 @@ const SuggestionList = () => {
     return (
         <section className='suggestion--list'>
             {
-                sortProductRequest.map((item) => <SuggestionItem key={item.id} {...item} />)
+               sortProductRequest.length > 0
+                   ? sortProductRequest.map((item) => <SuggestionItem key={item.id} {...item} />)
+                   : (<SuggestionEmpty />)
             }
         </section>
     );

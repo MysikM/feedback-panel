@@ -1,0 +1,27 @@
+@use '../../sass' as *;
+
+.suggestion--empty-list  {
+  @include flex();
+  flex-direction: column;
+  background: $white;
+  padding: 110px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.empty-list {
+  &--title{
+    margin-top: 53px;
+    color: $grey-darker;
+  }
+  &--description {
+    margin-top: 16px;
+    max-width: 410px;
+    text-align: center;
+    color: $grey-darker;
+  }
+  a {
+    margin-top: 48px;
+    margin-left: 0;
+  }
+}
