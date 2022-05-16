@@ -4,6 +4,8 @@
   background: $radial-gradient;
   padding: 62px 24px 24px;
   border-radius: 10px;
+  flex: 1;
+  width: 100%;
 
   &--title {
     color: $white;
