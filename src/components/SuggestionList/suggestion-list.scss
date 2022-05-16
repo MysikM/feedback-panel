@@ -1,1 +1,9 @@
 @use '../../sass' as *;
+
+.suggestion--list {
+  margin-top: 24px;
+  @include flex(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}

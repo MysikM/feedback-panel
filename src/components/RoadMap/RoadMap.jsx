@@ -13,8 +13,8 @@ const RoadMap = () => {
                 <Link className='body-xs' to='/roadmap' >View</Link>
             </div>
             <div className="roadmaps--list">
-                {roadmapsSectionList.map((item) => (
-                    <div className='roadmaps--item'>
+                {roadmapsSectionList.map((item, i) => (
+                    <div key={i} className='roadmaps--item'>
                         <div className={`roadmaps--circle ${item.circle}`} />
                         <p className="roadmaps--subtitle body">{item.title}</p>
                         <p className="body roadmaps--count">0</p>

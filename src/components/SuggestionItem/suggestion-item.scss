@@ -1,1 +1,90 @@
 @use '../../sass' as *;
+
+.suggestion-item {
+  @include flex(flex-start, flex-start);
+  padding: 28px 32px;
+  width: 100%;
+  cursor: pointer;
+  background-color: $white;
+  border-radius: 10px;
+
+  &:hover {
+    .suggestion-item{
+      &--title {
+        color: $blue-hover;
+      }
+    }
+  }
+
+  &--upvote {
+    @include flex();
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 12px;
+    width: 40px;
+    background-color: $grey;
+    color: $white;
+
+    &:hover {
+      background-color: $grey-hover;
+    }
+    &:focus {
+      border: 2px dotted $blue;
+    }
+
+    span{
+      color: $grey-darker;
+      margin-top: 8px;
+      font-weight: 700;
+      letter-spacing: -0.18px;
+    }
+
+    &__active {
+      background-color: $blue;
+
+      span {
+        color: $white;
+      }
+    }
+  }
+
+  &--content {
+    flex: 1;
+    margin: 0 20px 0 40px;
+    @include flex(flex-start);
+    flex-direction: column;
+  }
+
+  &--description {
+    margin-top: 4px;
+    color: $grey-dark;
+  }
+
+  &--category {
+    margin-top: 12px;
+    display: inline-block;
+    background-color: $grey;
+    color: $blue;
+    border-radius: 10px;
+    padding: 6px 16px 4px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  &--comment {
+    margin-left: auto;
+    align-self: center;
+    @include flex();
+
+    img {
+      width: 18px;
+    }
+
+    span {
+      color: $grey-darker;
+      font-weight: 700;
+      margin-left: 8px;
+      letter-spacing: -0.22px;
+    }
+  }
+}
