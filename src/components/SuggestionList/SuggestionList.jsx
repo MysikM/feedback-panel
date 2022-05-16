@@ -8,7 +8,7 @@ const SuggestionList = () => {
     const dispatch = useDispatch();
     const {sortProductRequest} = useSelector(state => state.suggestion);
     useEffect(()=>{
-        if (!sortProductRequest) {
+        if (sortProductRequest.length === 0) {
             dispatch(initialSuggestion());
         }
     },[]);

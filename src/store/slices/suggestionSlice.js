@@ -4,6 +4,7 @@ export const initialSuggestion = createAsyncThunk(
     'suggestion/initialSuggestion',
     async () => {
         const response = await fetch("./data.json");
+        console.log('start')
         const data = await response.json();
         return data.productRequests;
     }
@@ -40,7 +41,7 @@ const suggestionSlice = createSlice({
             state.sortProductRequest = [...state.productRequests];
         },
         sortSuggestion: (state, action) => {
-            state.sortProductRequest = state.productRequests.filter((item) => item.category === action.payload)
+            state.sortProductRequest = [...state.productRequests.filter((item) => action.payload.category.includes(item.category))]
         },
         upvoteSuggestion: (state, action) => {
             state.sortProductRequest = state.sortProductRequest.map((item) => item.id === action.payload.id ? {...item,upvotes: item.upvoted ? item.upvotes - 2 : item.upvotes + 2, upvoted: !item.upvoted } : item)
