@@ -1,9 +1,9 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Home from "../pages/Home";
-import RoadMap from "../pages/RoadMap";
-import FeedbackDetail from "../pages/FeedbackDetail";
-import FeedbackForm from "../pages/FeedbackForm";
+import RoadMap from "../pages/RoadMap/RoadMap";
+import FeedbackDetail from "../pages/FeedbackDetail/FeedbackDetail";
+import FeedbackForm from "../pages/FeedbackForm/FeedbackForm";
+import Home from "../pages/Home/Home";
 
 const Navigations = () => {
     return (
