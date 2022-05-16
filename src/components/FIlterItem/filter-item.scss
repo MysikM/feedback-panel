@@ -9,6 +9,10 @@
     border-radius: 10px;
     padding: 6px 16px;
     font-weight: 600;
+
+    &:hover {
+      background-color: $grey-hover;
+    }
     &__active {
       background-color: $blue;
       color: $white;
