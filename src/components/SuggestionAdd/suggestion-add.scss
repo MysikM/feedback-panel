@@ -1,1 +1,16 @@
 @use '../../sass' as *;
+
+.suggestion--add-btn {
+  background: $purple;
+  color: $grey;
+  font-weight: 700;
+  margin-left: auto;
+  padding: 10px 15px 8px;
+  border-radius: 10px;
+  @include flex();
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $purple-hover;
+  }
+}
