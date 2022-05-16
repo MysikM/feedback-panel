@@ -1,0 +1,15 @@
+@use '../../sass' as *;
+
+.suggestion {
+
+  &--count {
+    @include flex(center, flex-start);
+    img {
+      margin-right: 16px;
+      width: 23px;
+    }
+  }
+  &--title-amount {
+    color: $white;
+  }
+}
