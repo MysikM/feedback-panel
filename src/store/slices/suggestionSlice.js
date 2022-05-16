@@ -4,7 +4,6 @@ export const initialSuggestion = createAsyncThunk(
     'suggestion/initialSuggestion',
     async () => {
         const response = await fetch("./data.json");
-        console.log('start')
         const data = await response.json();
         return data.productRequests;
     }
