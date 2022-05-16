@@ -12,3 +12,10 @@ export const roadmapsSectionList = [
     {title: 'In-Progress', circle: 'purple'},
     {title: 'Live', circle: 'blue-light'},
 ]
+
+export const suggestionSelect = [
+    {title: 'Most Upvotes', sort: 'upvotes asc'},
+    {title: 'Least Upvotes', sort: 'upvotes desc'},
+    {title: 'Most Comments', sort: 'comment asc'},
+    {title: 'Least Comments', sort: 'comment desc'},
+]

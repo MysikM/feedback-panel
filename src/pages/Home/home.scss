@@ -3,7 +3,7 @@
 .home {
 
   &--container {
-    @include flex(center, space-between);
+    @include flex(flex-start, flex-start);
     gap: 35px;
   }
 }

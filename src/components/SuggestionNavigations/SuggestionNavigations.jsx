@@ -6,7 +6,7 @@ import SuggestionCount from "../SuggestionCount/SuggestionCount";
 
 const SuggestionNavigations = () => {
     return (
-        <div>
+        <div className='suggestion--navigations'>
             <SuggestionCount />
             <SuggestionSelect />
             <SuggestionAdd />

@@ -1,1 +1,72 @@
 @use '../../sass' as *;
+
+.suggestion--sort {
+  &-select {
+    margin-left: 34px;
+    position: relative;
+  }
+
+  &-title {
+    color: $grey-75;
+    cursor: pointer;
+    font-size: $h4;
+    padding: 4px;
+
+    span {
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    &__active {
+      color: $grey;
+    }
+  }
+
+  &-arrow {
+    transition: 0.2s ease-in-out;
+    &__open {
+      transform: rotate(180deg);
+    }
+  }
+  &-list {
+    @include flex();
+    flex-direction: column;
+    position: absolute;
+    width: 255px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px -7px rgba(55, 63, 104, 0.35);
+    top: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+    &__open {
+      top: 65px;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &-item {
+    position: relative;
+    padding: 12px 24px;
+    width: 100%;
+    border-bottom: 1px solid $grey-darker-15;
+    cursor: pointer;
+
+    button {
+      color: $grey-dark;
+    }
+  }
+
+  &-icon {
+    display: none;
+    position: absolute;
+    width: 13px;
+    height: 11px;
+    top: 17px;
+    right: 20px;
+
+    &__select {
+      display: block;
+    }
+  }
+}
