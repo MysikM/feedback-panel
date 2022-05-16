@@ -1,0 +1,17 @@
+@use '../../sass' as *;
+
+.filter-item {
+
+  &--btn {
+    text-transform: capitalize;
+    background-color: $grey;
+    color: $blue;
+    border-radius: 10px;
+    padding: 6px 16px;
+    font-weight: 600;
+    &__active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+}

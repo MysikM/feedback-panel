@@ -51,9 +51,19 @@ h2 {
   letter-spacing: $h2-ls;
 }
 
+button {
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
 .body-s {
   font-size: $body-s;
   line-height: $body-s-lh;
+}
+.body-xs {
+  font-size: $body-xs;
+  line-height: $body-xs-lh;
 }
 .container {
   max-width: $max-width;
