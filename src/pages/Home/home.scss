@@ -1,7 +1,7 @@
 @use '../../sass/index' as *;
 
 .home {
-
+  padding: 95px 40px;
   &--container {
     @include flex(flex-start, flex-start);
     gap: 35px;
