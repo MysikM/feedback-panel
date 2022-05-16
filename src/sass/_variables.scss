@@ -1,4 +1,47 @@
 
-$background: rgba(255,255,255, 0.8);
 $font-family: 'Josefin Sans', sans-serif;
+$font-size: 16px;
 
+$mobile: 760px;
+$tablet: 950px;
+$container: 1100px;
+
+$radial-gradient: radial-gradient(128.88% 128.88% at 103.9% -10.39%,#e84d70 0%,#a337f6 53.09%,#28a7ed 100%);
+$purple: #ad1fea;
+$purple-hover: #c75af6;
+$blue: #4661e6;
+$blue-hover: #7c91f9;
+$blue-light: #62bcfa;
+$orange: #f49f85;
+$red: #d73737;
+$red-hover: #e98888;
+$grey-darkest: #373f68;
+$grey-darker: #3a4374;
+$grey-darker-15: rgba(58,67,115,0.15);
+$grey-darker-hover: #656ea3;
+$grey-dark: #647196;
+$grey-hover: #cfd7ff;
+$input-placeholder: #8c92b3;
+$grey: #f2f4ff;
+$grey-75: rgba(240,242,255,0.75);
+$grey-light: #f7f8fd;
+$h1: 1.5rem;
+$h1-lh: 35px;
+$h1-ls: -0.33px;
+$h2: 1.25rem;
+$h2-lh: 29px;
+$h2-ls: -0.25px;
+$h3: 1.125rem;
+$h3-lh: 26px;
+$h3-ls: -0.25px;
+$h4: 0.875rem;
+$h4-lh: 20px;
+$h4-ls: -0.2px;
+$body: 1rem;
+$body-lh: 23px;
+$body-s: 0.938rem;
+$body-s-lh: 22px;
+$body-xs: 0.813rem;
+$body-xs-lh: 19px;
+$max-width: 1100px;
+$max-width-s: 730px;
