@@ -1,1 +1,9 @@
 @use '../../sass/index' as *;
+
+.home {
+
+  &--container {
+    @include flex(center, space-between);
+    gap: 35px;
+  }
+}

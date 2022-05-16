@@ -45,7 +45,16 @@ img {
 iframe {
   border: 0
 }
+h2 {
+  font-size: $h2;
+  line-height: $h2-lh;
+  letter-spacing: $h2-ls;
+}
 
+.body-s {
+  font-size: $body-s;
+  line-height: $body-s-lh;
+}
 .container {
   max-width: $max-width;
   margin: 0 auto;

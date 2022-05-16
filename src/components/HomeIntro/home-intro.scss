@@ -1,1 +1,16 @@
 @use '../../sass' as *;
+
+.intro {
+  background: $radial-gradient;
+  padding: 62px 24px 24px;
+  border-radius: 10px;
+
+  &--title {
+    color: $white;
+  }
+
+  &--description{
+    color: $white;
+    opacity: 0.75;
+  }
+}
