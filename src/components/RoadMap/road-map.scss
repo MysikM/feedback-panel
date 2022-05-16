@@ -1,1 +1,61 @@
 @use '../../sass' as *;
+
+.home--roadmaps {
+  padding: 24px;
+  border-radius: 10px;
+}
+.roadmaps {
+  flex-direction: column;
+  background-color: $white;
+
+  &--section {
+    @include flex(center, space-between);
+
+    a{
+      transition: 0.2s ease-in-out;
+      color: $blue;
+      font-weight: 600;
+      text-decoration: underline;
+
+      &:hover {
+        color: $blue-hover;
+      }
+
+      &:focus {
+        border: 2px dotted $blue;
+      }
+    }
+  }
+
+  &--title {
+    color: $grey-darker;
+  }
+
+  &--list {
+    margin-top: 24px;
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+  }
+
+  &--item {
+    width: 100%;
+    @include flex(center, flex-start);
+  }
+
+  &--circle {
+    border-radius: 8px;
+    height: 8px;
+    width: 8px;
+  }
+
+  &--subtitle {
+    color: $grey-darker;
+    margin-left: 16px;
+  }
+
+  &--count{
+    flex: 1;
+    text-align: end;
+  }
+
+}

@@ -45,10 +45,17 @@ img {
 iframe {
   border: 0
 }
+
 h2 {
   font-size: $h2;
   line-height: $h2-lh;
   letter-spacing: $h2-ls;
+}
+
+h3 {
+  font-size: $h3;
+  line-height: $h3-lh;
+  letter-spacing: $h3-ls;
 }
 
 button {
@@ -57,6 +64,10 @@ button {
   border: none;
 }
 
+.body {
+  font-size: $body;
+  line-height: $body-lh;
+}
 .body-s {
   font-size: $body-s;
   line-height: $body-s-lh;
@@ -68,4 +79,14 @@ button {
 .container {
   max-width: $max-width;
   margin: 0 auto;
+}
+
+.orange {
+  background-color: $orange;
+}
+.purple {
+  background-color: $purple;
+}
+.blue-light {
+  background-color: $blue-light;
 }
