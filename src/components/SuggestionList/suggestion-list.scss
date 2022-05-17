@@ -6,4 +6,9 @@
   flex-direction: column;
   width: 100%;
   gap: 20px;
+
+  @include mobile {
+    padding: 0 24px;
+    gap: 14px;
+  }
 }

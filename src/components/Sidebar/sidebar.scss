@@ -4,8 +4,18 @@
   @include flex(flex-start, center);
   row-gap: 24px;
   flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    max-width: 100%;
+    column-gap: 24px;
+  }
 }
 .sidebar {
   max-width: 255px;
   width: 100%;
+  @include tablet {
+    max-width: 100%;
+  }
 }

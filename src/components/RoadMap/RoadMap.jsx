@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React from 'react';
 import './road-map.scss';
 import {Link} from "react-router-dom";
 import {roadmapsSectionList} from "../../data/data";

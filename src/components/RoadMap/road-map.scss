@@ -5,6 +5,10 @@
   border-radius: 10px;
   flex: 1;
   width: 100%;
+
+  @include mobile {
+    display: none;
+  }
 }
 .roadmaps {
   flex-direction: column;

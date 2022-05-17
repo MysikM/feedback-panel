@@ -10,4 +10,8 @@
   padding: 24px;
   flex: 1;
   width: 100%;
+
+  @include mobile {
+    display: none;
+  }
 }
