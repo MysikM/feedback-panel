@@ -5,5 +5,8 @@
   &--container {
     max-width: $max-width-s;;
     margin: 0 auto;
+    @include flex(normal, flex-start);
+    flex-direction: column;
+    row-gap: 32px;
   }
 }
