@@ -1,0 +1,13 @@
+@use '../../sass' as *;
+
+.reply-on-comment{
+  margin-top: 2rem;
+  @include flex(inherit, flex-start);
+  flex-direction: column;
+
+  &--replyingTo {
+    color: $purple;
+    font-weight: 700;
+  }
+
+}

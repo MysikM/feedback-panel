@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import './comment-item.scss';
 import ReplyCommentForm from "../ReplyCommentForm/ReplyCommentForm";
+import ReplyList from "../ReplyList/ReplyList";
 
 
-const CommentItem = ({content, user}) => {
+const CommentItem = ({content, user, replies}) => {
     const {image, name, username} = user;
     const [isReplyOnComment, setIsReplyOnComment] = useState(false);
     const replyToggle = () => {
@@ -27,6 +28,8 @@ const CommentItem = ({content, user}) => {
                 <button className='comment--reply body-xs' onClick={replyToggle}>Reply</button>
             </div>
             {isReplyOnComment && (<ReplyCommentForm />)}
+            {replies?.length > 0 && (<ReplyList replies={replies} />)}
+            {replies?.length > 0 && (<div className='have-replies' />)}
         </li>
     );
 };
