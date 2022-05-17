@@ -34,6 +34,16 @@ button, input {
   outline: 0;
 }
 
+.input {
+  background-color: $grey-light;
+  color: $grey-darker;
+  border: none;
+  resize: none;
+  border-radius: 5px;
+  padding: 16px 24px 20px;
+  width: 100%;
+}
+
 ul {
   list-style-type: none;
 }

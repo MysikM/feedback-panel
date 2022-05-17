@@ -1,0 +1,23 @@
+@use '../../sass' as *;
+
+.detail--comments {
+  @include flex(flex-start, flex-start);
+  flex-direction: column;
+}
+
+.comments {
+  background-color: $white;
+  border-radius: 10px;
+  padding: 24px 32px 32px;
+  &--title {
+    color: $grey-darker;
+    text-transform: capitalize;
+  }
+
+  &--list {
+    margin-top: 28px;
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+
+  }
+}

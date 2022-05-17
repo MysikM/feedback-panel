@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import DetailNavigation from "../../components/DetailNavigation/DetailNavigation";
 import SuggestionItem from "../../components/SuggestionItem/SuggestionItem";
 import {useSelector} from "react-redux";
+import CommentList from "../../components/CommentList/CommentList";
 
 const FeedbackDetail = () => {
     const {id} = useParams();
@@ -19,6 +20,7 @@ const FeedbackDetail = () => {
             <div className="detail--container">
                 <DetailNavigation />
                 <SuggestionItem {...suggestionItem} />
+                <CommentList count={suggestionItem.comments.length} comments={suggestionItem.comments}/>
             </div>
         </section>
     );

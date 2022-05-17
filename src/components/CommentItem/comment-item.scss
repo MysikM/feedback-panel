@@ -1,0 +1,57 @@
+@use '../../sass' as *;
+
+.item--container {
+  @include flex(flex-start, space-between);
+}
+
+.comment {
+
+  &--item {
+    position: relative;
+    margin: 1.5rem 0;
+    &:after{
+      position: absolute;
+      content: '';
+      background-color: rgba(140, 146, 197, 0.25);
+      height: 1px;
+      width: 100%;
+      bottom: -1.25rem;
+    }
+    &:last-child:after {
+      content: none;
+    }
+
+    img{
+      width: 40px;
+      height: 43px;
+      border-radius: 50%;
+    }
+  }
+
+  &--user {
+    margin-left: 32px;
+
+    &-name {
+      color: $grey-darker;
+      line-height: 13px;
+    }
+    &-login {
+      color: $grey-dark;
+    }
+    &-description {
+      margin-top: 16px;
+      color: $grey-dark;
+    }
+  }
+
+  &--reply {
+    cursor: pointer;
+    color: $blue;
+    font-weight: 700;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
