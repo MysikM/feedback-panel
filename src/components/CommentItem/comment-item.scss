@@ -2,6 +2,7 @@
 
 .item--container {
   @include flex(flex-start, space-between);
+  position: relative;
 
   @include tablet{
     justify-content: flex-start;

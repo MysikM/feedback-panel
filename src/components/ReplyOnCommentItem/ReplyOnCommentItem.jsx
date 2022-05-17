@@ -26,6 +26,7 @@ const ReplyOnCommentItem = ({content, replyingTo, user: {image, name, username}}
                     <span className='reply-on-comment--replyingTo'>@{replyingTo} </span>{content}
                 </p>
                 {isReplyOnComment && (<ReplyCommentForm />)}
+                <div className='have-replies' />
             </div>
     );
 };

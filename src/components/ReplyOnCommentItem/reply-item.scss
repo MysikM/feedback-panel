@@ -9,5 +9,13 @@
     color: $purple;
     font-weight: 700;
   }
+}
 
+.have-replies {
+  position: absolute;
+  height: calc(100%);
+  width: 1px;
+  background-color: rgba(140, 146, 197, 0.25);
+  left: -2.5rem;
+  top: 0;
 }

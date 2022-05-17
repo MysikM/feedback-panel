@@ -32,7 +32,6 @@ const CommentItem = ({content, user, replies}) => {
             </p>
             {isReplyOnComment && (<ReplyCommentForm />)}
             {replies?.length > 0 && (<ReplyList replies={replies} />)}
-            {replies?.length > 0 && (<div className='have-replies' />)}
         </li>
     );
 };
