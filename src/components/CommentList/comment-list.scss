@@ -19,5 +19,8 @@
     @include flex(flex-start, flex-start);
     flex-direction: column;
 
+    @include tablet {
+      margin-top: 24px;
+    }
   }
 }

@@ -2,4 +2,8 @@
 
 .comment--reply-list {
   margin-left: 3rem;
+
+  @include tablet {
+    margin-left: 1rem;
+  }
 }

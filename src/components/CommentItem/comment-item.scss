@@ -2,6 +2,11 @@
 
 .item--container {
   @include flex(flex-start, space-between);
+
+  @include tablet{
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .comment {
@@ -9,6 +14,11 @@
   &--item {
     position: relative;
     margin: 1.5rem 0;
+
+    @include tablet {
+      margin: 1rem 0;
+    }
+
     &:after{
       position: absolute;
       content: '';
@@ -16,6 +26,10 @@
       height: 1px;
       width: 100%;
       bottom: -1.25rem;
+
+      @include tablet {
+        bottom: -1rem;
+      }
     }
     &:last-child:after {
       content: none;
@@ -31,6 +45,10 @@
   &--user {
     margin-left: 32px;
 
+    @include tablet {
+      margin-left: 16px;
+    }
+
     &-name {
       color: $grey-darker;
       line-height: 13px;
@@ -41,6 +59,18 @@
     &-description {
       margin-top: 16px;
       color: $grey-dark;
+
+      &.tablet {
+        display: none;
+      }
+
+      @include tablet {
+        display: none;
+        &.tablet {
+          display: block;
+        }
+        margin-top: 1.25rem;
+      }
     }
   }
 
@@ -51,6 +81,10 @@
 
     &:hover {
       text-decoration: underline;
+    }
+
+    @include tablet{
+      margin-left: auto;
     }
   }
 

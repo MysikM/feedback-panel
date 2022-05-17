@@ -15,7 +15,8 @@ const FeedbackDetail = () => {
 
     useEffect(()=>{
         setSuggestionItem(productRequests.find(item => item.id === +id));
-    },[id])
+    },[id]);
+
     return (
         <section className='detail'>
             <div className="detail--container">

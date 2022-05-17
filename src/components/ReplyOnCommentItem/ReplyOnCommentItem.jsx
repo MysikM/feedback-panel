@@ -22,6 +22,9 @@ const ReplyOnCommentItem = ({content, replyingTo, user: {image, name, username}}
                     </div>
                     <button className='comment--reply body-xs' onClick={replyToggle}>Reply</button>
                 </div>
+                <p className="body-s comment--user-description tablet">
+                    <span className='reply-on-comment--replyingTo'>@{replyingTo} </span>{content}
+                </p>
                 {isReplyOnComment && (<ReplyCommentForm />)}
             </div>
     );

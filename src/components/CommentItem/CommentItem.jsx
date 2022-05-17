@@ -27,6 +27,9 @@ const CommentItem = ({content, user, replies}) => {
                 </div>
                 <button className='comment--reply body-xs' onClick={replyToggle}>Reply</button>
             </div>
+            <p className="body-s comment--user-description tablet">
+                {content}
+            </p>
             {isReplyOnComment && (<ReplyCommentForm />)}
             {replies?.length > 0 && (<ReplyList replies={replies} />)}
             {replies?.length > 0 && (<div className='have-replies' />)}
