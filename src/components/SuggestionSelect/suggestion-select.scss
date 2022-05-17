@@ -39,6 +39,7 @@
     opacity: 0;
     visibility: hidden;
     transition: 0.5s ease-in-out;
+    background-color: $white;
     &__open {
       top: 65px;
       opacity: 1;

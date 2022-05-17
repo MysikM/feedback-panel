@@ -1,11 +1,13 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 import './road-map.scss';
 import {Link} from "react-router-dom";
 import {roadmapsSectionList} from "../../data/data";
 import {useStatusCount} from "../../hooks/useStatusCount";
+import {useSelector} from "react-redux";
 
 const RoadMap = () => {
-    const {roadMapCount} = useStatusCount();
+    const {productRequests} = useSelector(state => state.suggestion)
+    const {roadMapCount} = useStatusCount(productRequests);
     return (
         <div className='home--roadmaps roadmaps'>
             <div className="roadmaps--section">

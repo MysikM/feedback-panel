@@ -1,9 +1,7 @@
-import {useSelector} from "react-redux";
 
-export const useStatusCount = () => {
-    const {productRequests} = useSelector(state => state.suggestion);
+export const useStatusCount = (array) => {
 
-    const roadMapCount = productRequests.reduce((res, el) => {
+    const roadMapCount = array.reduce((res, el) => {
         if(!res.some(item => item.title ===  el.status)) {
             res.push({title: el.status, count: 0});
         } else {

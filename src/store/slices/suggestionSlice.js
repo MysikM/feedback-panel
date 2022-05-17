@@ -44,6 +44,18 @@ const suggestionSlice = createSlice({
         },
         upvoteSuggestion: (state, action) => {
             state.sortProductRequest = state.sortProductRequest.map((item) => item.id === action.payload.id ? {...item,upvotes: item.upvoted ? item.upvotes - 2 : item.upvotes + 2, upvoted: !item.upvoted } : item)
+        },
+        ascUpvotesSuggestion: (state, action) => {
+            state.sortProductRequest = state.sortProductRequest.sort((a,b) => b.upvotes - a.upvotes)
+        },
+        descUpvotesSuggestion: (state, action) => {
+            state.sortProductRequest = state.sortProductRequest.sort((a,b) => a.upvotes - b.upvotes)
+        },
+        ascCommentSuggestion: (state, action) => {
+            state.sortProductRequest = state.sortProductRequest.sort((a,b) => b.comments.length - a.comments.length)
+        },
+        desCommentSuggestion: (state, action) => {
+            state.sortProductRequest = state.sortProductRequest.sort((a,b) =>  a.comments.length - b.comments.length)
         }
     },
     extraReducers: {
@@ -55,4 +67,14 @@ const suggestionSlice = createSlice({
 })
 
 export default suggestionSlice.reducer;
-export const {addSuggestion, removeSuggestion, editSuggestion, sortSuggestion, upvoteSuggestion} = suggestionSlice.actions;
+export const {
+    addSuggestion,
+    removeSuggestion,
+    editSuggestion,
+    sortSuggestion,
+    upvoteSuggestion,
+    ascUpvotesSuggestion,
+    descUpvotesSuggestion,
+    ascCommentSuggestion,
+    desCommentSuggestion,
+} = suggestionSlice.actions;

@@ -19,9 +19,9 @@ const FilterCategory = () => {
         if(title === 'all') {
             dispatch(sortSuggestion({category: allCategory}))
         } else {
-            setPickCategory(title);
             dispatch(sortSuggestion({category: title}))
         }
+        setPickCategory(title);
 
     }
     return (
