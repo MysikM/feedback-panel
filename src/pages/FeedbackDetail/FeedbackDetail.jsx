@@ -5,6 +5,7 @@ import DetailNavigation from "../../components/DetailNavigation/DetailNavigation
 import SuggestionItem from "../../components/SuggestionItem/SuggestionItem";
 import {useSelector} from "react-redux";
 import CommentList from "../../components/CommentList/CommentList";
+import CommentAddForm from "../../components/CommentAddForm/CommentAddForm";
 
 const FeedbackDetail = () => {
     const {id} = useParams();
@@ -21,6 +22,7 @@ const FeedbackDetail = () => {
                 <DetailNavigation />
                 <SuggestionItem {...suggestionItem} />
                 <CommentList count={suggestionItem.comments.length} comments={suggestionItem.comments}/>
+                <CommentAddForm />
             </div>
         </section>
     );

@@ -1,0 +1,38 @@
+@use '../../sass' as *;
+
+.comment-form {
+  @include flex(initial, flex-start);
+  flex-direction: column;
+  background-color: $white;
+  border-radius: 10px;
+  padding: 24px 32px 32px;
+
+  &--title {
+    color: $grey-darker;
+  }
+
+  textarea {
+    margin-top: 24px;
+  }
+
+  &--bottom {
+    margin-top: 16px;
+    @include flex(center, space-between);
+  }
+
+  &--length {
+    color: $grey-dark;
+  }
+
+  &--btn {
+    padding: 12px 24px 10px;
+    font-weight: 700;
+    color: $grey;
+    background-color: $purple;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $purple-hover;
+    }
+  }
+}
