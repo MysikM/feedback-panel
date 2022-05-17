@@ -1,12 +1,15 @@
 @use '../../sass' as *;
 
 .suggestion {
-
   &--count {
     @include flex(center, flex-start);
     img {
       margin-right: 16px;
       width: 23px;
+    }
+
+    @media only screen and (max-width: 576px){
+      display: none;
     }
   }
   &--title-amount {
