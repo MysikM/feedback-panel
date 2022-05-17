@@ -1,1 +1,9 @@
 @use '../../sass' as *;
+
+.detail {
+  padding: 80px 40px;
+  &--container {
+    max-width: $max-width-s;;
+    margin: 0 auto;
+  }
+}

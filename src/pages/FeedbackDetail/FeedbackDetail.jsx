@@ -1,11 +1,16 @@
 import React from 'react';
 import './feedback-detail.scss';
+import {useParams} from "react-router-dom";
+import DetailNavigation from "../../components/DetailNavigation/DetailNavigation";
 
 const FeedbackDetail = () => {
+    const {id} = useParams();
     return (
-        <div>
-            FeedbackDetail
-        </div>
+        <section className='detail'>
+            <div className="detail--container">
+                <DetailNavigation />
+            </div>
+        </section>
     );
 };
 
