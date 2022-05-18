@@ -7,6 +7,10 @@
   border-radius: 5px;
   border-top: 6px solid transparent;
 
+  @include tablet {
+    padding: 20px;
+  }
+
   &.orange {
     border-color: $orange;
   }
@@ -33,10 +37,16 @@
     h3 {
       margin-top: 8px;
       color: $grey-darker;
+      @include tablet {
+        margin-top: 16px;
+      }
     }
     p{
       margin-top: 4px;
       color: $grey-dark;
+      @include tablet {
+        margin-top: 11px;
+      }
     }
     div{
       margin-top: 16px;
@@ -47,6 +57,10 @@
       border-radius: 10px;
       font-weight: 700;
       width: fit-content;
+
+      @include tablet {
+        margin-top: 22px;
+      }
     }
     &:hover {
       h3 {

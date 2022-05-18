@@ -4,11 +4,18 @@
 
   &--container {
     padding: 78px 40px;
+    @include tablet {
+      padding: 56px 40px;
+    }
   }
 
   &--section {
     margin-top: 48px;
     @include flex(flex-start, space-between);
     gap: 30px;
+
+    @include tablet {
+      gap: 10px;
+    }
   }
 }
