@@ -7,6 +7,9 @@
     @include tablet {
       padding: 56px 40px;
     }
+    @include mobile {
+      padding: 0;
+    }
   }
 
   &--section {
@@ -16,6 +19,15 @@
 
     @include tablet {
       gap: 10px;
+    }
+    @include mobile {
+      display: none;
+    }
+
+    &-mobile {
+      display: block;
+      padding: 24px;
+      margin-top: 0;
     }
   }
 }

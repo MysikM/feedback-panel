@@ -1,0 +1,35 @@
+@use '../../sass' as *;
+
+.roadmap-toggle {
+  @include flex(center, space-between);
+
+  &--item {
+    cursor: pointer;
+    background-color: transparent;
+    flex: 1;
+    border-bottom: 1px solid rgba(140, 146, 179, 0.25);
+    @include flex(center, center);
+    color: $grey-darker;
+    font-weight: 700;
+    padding: 20px 0 16.4px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.orange {
+      opacity: 1;
+      border-bottom: 4px solid $orange;
+    }
+    &.purple {
+      opacity: 1;
+      border-bottom: 4px solid purple;
+    }
+    &.blue-light {
+      opacity: 1;
+      border-bottom: 4px solid $blue-light;
+    }
+  }
+}
