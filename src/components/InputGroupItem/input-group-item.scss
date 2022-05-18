@@ -1,0 +1,25 @@
+@use '../../sass' as *;
+
+.input-group {
+  @include flex(flex-start, flex-start);
+  font-size: 0.875rem;
+  line-height: 20px;
+
+  flex-direction: column;
+  &--title {
+    margin-top: 24px;
+    color: $grey-darker;
+    letter-spacing: -0.19px;
+    font-weight: 700;
+  }
+
+  &--description {
+    color: $grey-dark;
+    margin-top: 2px;
+    margin-bottom: 16px;
+  }
+
+  & > .input {
+    padding: 13px 24px;
+  }
+}
