@@ -31,7 +31,7 @@ const CommentItem = ({content, user, replies, id, postId}) => {
                 {content}
             </p>
             {isReplyOnComment && (<ReplyCommentForm postId={postId} commentId={id} replyingTo={username} />)}
-            {replies?.length > 0 && (<ReplyList replies={replies} />)}
+            {replies?.length > 0 && (<ReplyList replies={replies} postId={postId} commentId={id} />)}
         </li>
     );
 };

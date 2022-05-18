@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './reply-item.scss';
 import ReplyCommentForm from "../ReplyCommentForm/ReplyCommentForm";
 
-const ReplyOnCommentItem = ({content, replyingTo, user: {image, name, username}}) => {
+const ReplyOnCommentItem = ({content, replyingTo, user: {image, name, username}, commentId, postId }) => {
     const [isReplyOnComment, setIsReplyOnComment] = useState(false);
     const replyToggle = () => setIsReplyOnComment(!isReplyOnComment);
     return (
@@ -25,7 +25,7 @@ const ReplyOnCommentItem = ({content, replyingTo, user: {image, name, username}}
                 <p className="body-s comment--user-description tablet">
                     <span className='reply-on-comment--replyingTo'>@{replyingTo} </span>{content}
                 </p>
-                {isReplyOnComment && (<ReplyCommentForm />)}
+                {isReplyOnComment && (<ReplyCommentForm postId={postId} commentId={commentId} replyingTo={username} />)}
                 <div className='have-replies' />
             </div>
     );
