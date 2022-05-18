@@ -3,7 +3,7 @@ import './detail-navigation.scss'
 import {Link, useNavigate} from "react-router-dom";
 import arrowBack from '../../assets/shared/icon-arrow-left.svg';
 
-const DetailNavigation = () => {
+const DetailNavigation = ({postId}) => {
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1);
@@ -14,7 +14,7 @@ const DetailNavigation = () => {
                 <img src={arrowBack} alt='arrow back' />
                 Go Back
             </button>
-            <Link className='navigate-detail--link' to='/feedback/form' >Edit Feedback</Link>
+            <Link className='navigate-detail--link' to={`/feedback/form/${postId}`} >Edit Feedback</Link>
         </div>
     );
 };

@@ -24,7 +24,7 @@ const FeedbackDetail = () => {
     return (
         <section className='detail'>
             <div className="detail--container">
-                <DetailNavigation />
+                <DetailNavigation postId={id} />
                 <SuggestionItem {...suggestionItem} />
                 <CommentList count={suggestionItem.comments.length} comments={suggestionItem.comments} postId={id}/>
                 <CommentAddForm postId={id} />

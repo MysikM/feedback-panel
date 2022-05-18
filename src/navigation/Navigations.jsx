@@ -12,7 +12,8 @@ const Navigations = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/roadmap' element={<RoadMap />} />
                 <Route path='/feedback/:id' element={<FeedbackDetail />} />
-                <Route path='/feedback/form' element={<FeedbackForm />} />
+                <Route path='/feedback/form/' element={<FeedbackForm />} />
+                <Route path='/feedback/form/:id' element={<FeedbackForm />} />
             </Routes>
         </BrowserRouter>
     );

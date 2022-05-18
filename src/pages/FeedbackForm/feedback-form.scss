@@ -42,6 +42,7 @@
   &--title {
     padding-top: 24px;
     margin-bottom: 16px;
+    color: $grey-darker;
 
     @include mobile {
       margin-bottom: 0;
@@ -62,6 +63,7 @@
 
   &--dropdown-btn {
     width: 100%;
+    text-transform: capitalize;
     @include flex(center, space-between);
     padding: 13px 24px 10px;
     background-color: $grey-light;
@@ -123,7 +125,7 @@
     column-gap: 16px;
 
     @include mobile {
-      flex-direction: column;
+      flex-direction: column-reverse;
       row-gap: 16px;
     }
   }
