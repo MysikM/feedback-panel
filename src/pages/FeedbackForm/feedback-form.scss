@@ -2,10 +2,18 @@
 
 .feedback-form {
   padding: 92px 24px;
+  @include tablet {
+    padding: 56px 24px;
+  }
+  @include mobile {
+    padding: 32px 24px;
+  }
+
   &--container {
     max-width: 550px;
     margin: 0 auto;
   }
+
   &--navigate {
     font-size: $h4;
     color: $grey-darker;
@@ -23,11 +31,21 @@
     margin-top: -28px;
     width: 56px;
     height: 56px;
+
+    @include mobile {
+      margin-top: -20px;
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &--title {
     padding-top: 24px;
     margin-bottom: 16px;
+
+    @include mobile {
+      margin-bottom: 0;
+    }
   }
 
   &--form {
@@ -103,6 +121,11 @@
     margin-top: 32px;
     @include flex(center, flex-end);
     column-gap: 16px;
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 16px;
+    }
   }
 
   &--btn {
@@ -112,6 +135,10 @@
     font-size: 14px;
     color: $grey;
     font-weight: 700;
+
+    @include mobile {
+      width: 100%;
+    }
 
     &-delete{
       background-color: $red;
