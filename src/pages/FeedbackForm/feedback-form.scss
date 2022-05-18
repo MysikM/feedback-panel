@@ -63,7 +63,6 @@
 
   &--dropdown-btn {
     width: 100%;
-    text-transform: capitalize;
     @include flex(center, space-between);
     padding: 13px 24px 10px;
     background-color: $grey-light;

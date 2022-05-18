@@ -6,7 +6,7 @@ import InputGroupItem from "../../components/InputGroupItem/InputGroupItem";
 import iconNewFeedback from '../../assets/shared/icon-new-feedback.svg';
 import iconEditFeedback from '../../assets/shared/icon-edit-feedback.svg';
 import iconActiveCategory from '../../assets/shared/icon-check.svg';
-import {homeNavigations} from "../../data/data";
+import {homeNavigations, roadmapsSectionList} from "../../data/data";
 import {useDispatch, useSelector} from "react-redux";
 import {removeSuggestion, addSuggestion, editSuggestion} from "../../store/slices/suggestionSlice";
 
@@ -20,11 +20,18 @@ const FeedbackForm = () => {
     const [title, setTitle] = useState(suggestionItem?.title || '');
 
     const [category, setCategory] = useState(suggestionItem?.category || homeNavigations[1].category);
-    const [isDropdownActive, setIsDropdownActive] = useState(false);
+    const [isDropdownCategoryActive, setIsDropdownCategoryActive] = useState(false);
     const pickCategory = (category) => {
         setCategory(category);
-        setIsDropdownActive(false);
+        setIsDropdownCategoryActive(false);
     };
+
+    const [status, setStatus] = useState(suggestionItem?.status || roadmapsSectionList[0].title);
+    const [isDropdownStatusActive, setIsDropdownStatusActive] = useState(false);
+    const pickStatus = (status) => {
+        setStatus(status);
+        setIsDropdownStatusActive(false);
+    }
 
     const [detail, setDetail] = useState(suggestionItem?.description || '');
 
@@ -46,6 +53,7 @@ const FeedbackForm = () => {
             ...suggestionItem,
             title,
             category,
+            status,
             description: detail
         }
         dispatch(editSuggestion(edited));
@@ -73,6 +81,7 @@ const FeedbackForm = () => {
             setTitle(productRequests.find(item => item.id === +params.id).title);
             setCategory(productRequests.find(item => item.id === +params.id).category);
             setDetail(productRequests.find(item => item.id === +params.id).description);
+            setStatus(productRequests.find(item => item.id === +params.id).status);
         }
     }, [params])
     return (
@@ -97,13 +106,13 @@ const FeedbackForm = () => {
                     </InputGroupItem>
                     <InputGroupItem label={'Category'} description={'Choose a category for your feedback'} >
                         <div className='feedback-form--dropdown'>
-                            <button className='body-s feedback-form--dropdown-btn' onClick={() => setIsDropdownActive(!isDropdownActive)}>
-                                {category}
-                                <img style={{transform: `rotate(${isDropdownActive ? '90deg' : '-90deg'})`}} src={arrowLeft} alt="arrow back"/>
+                            <button className='body-s feedback-form--dropdown-btn' onClick={() => setIsDropdownCategoryActive(!isDropdownCategoryActive)}>
+                                {category.toUpperCase()}
+                                <img style={{transform: `rotate(${isDropdownCategoryActive ? '90deg' : '-90deg'})`}} src={arrowLeft} alt="arrow back"/>
                             </button>
-                            <ul className={`feedback-form--dropdown-list ${isDropdownActive && 'feedback-form--dropdown-list__open'}`}>
+                            <ul className={`feedback-form--dropdown-list ${isDropdownCategoryActive && 'feedback-form--dropdown-list__open'}`}>
                                 {homeNavigations.slice(1).map((item, i) => (
-                                    <li key={i} onClick={() => pickCategory(item.title)} className={`${category === item.category && '__active'}`}>
+                                    <li key={i} onClick={() => pickCategory(item.category)} className={`${category === item.category && '__active'}`}>
                                         {item.title}
                                         {category === item.category && <img src={iconActiveCategory} alt="icon active category"/>}
                                     </li>
@@ -111,6 +120,22 @@ const FeedbackForm = () => {
                             </ul>
                         </div>
                     </InputGroupItem>
+                    {params?.id && (<InputGroupItem label={'Update Status'} description={'Change feature state'} >
+                        <div className='feedback-form--dropdown'>
+                            <button className='body-s feedback-form--dropdown-btn' onClick={() => setIsDropdownStatusActive(!isDropdownStatusActive)}>
+                                {status.toUpperCase()}
+                                <img style={{transform: `rotate(${isDropdownStatusActive ? '90deg' : '-90deg'})`}} src={arrowLeft} alt="arrow back"/>
+                            </button>
+                            <ul className={`feedback-form--dropdown-list ${isDropdownStatusActive && 'feedback-form--dropdown-list__open'}`}>
+                                {roadmapsSectionList.map((item, i) => (
+                                    <li key={i} onClick={() => pickStatus(item.title)} className={`${status.toLowerCase() === item.title.toLowerCase() && '__active'}`}>
+                                        {item.title}
+                                        {status.toLowerCase() === item.title.toLowerCase() && <img src={iconActiveCategory} alt="icon active category"/>}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </InputGroupItem>)}
                     <InputGroupItem label={'Feedback Detail'} description={'Include any specific comments on what should be improved, added, etc.'}>
                         <textarea
                             value={detail}

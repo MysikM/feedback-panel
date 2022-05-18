@@ -8,6 +8,7 @@ export const homeNavigations = [
 ];
 
 export const roadmapsSectionList = [
+    {title: 'Suggestion', circle: 'none'},
     {title: 'Planned', circle: 'orange'},
     {title: 'In-Progress', circle: 'purple'},
     {title: 'Live', circle: 'blue-light'},
