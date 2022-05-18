@@ -7,7 +7,7 @@ const RoadMapHeader = () => {
     return (
         <header className='roadmap--header header'>
             <div className="header--nav">
-                <Link className='header--back-btn' to='/'>
+                <Link className='header--back-btn' to='/feedback-panel'>
                     <img src={arrowBack} alt="arrow left"/>
                     Go Back
                 </Link>

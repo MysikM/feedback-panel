@@ -45,7 +45,7 @@ const FeedbackForm = () => {
 
     const removeItem = () => {
         dispatch(removeSuggestion({id: suggestionItem.id}))
-        navigate('/')
+        navigate('/feedback-panel')
     }
 
     const edit = () => {

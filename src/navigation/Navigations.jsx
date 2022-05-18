@@ -9,7 +9,7 @@ const Navigations = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Home />} />
+                <Route path='/feedback-panel' element={<Home />} />
                 <Route path='/roadmap' element={<RoadMap />} />
                 <Route path='/feedback/:id' element={<FeedbackDetail />} />
                 <Route path='/feedback/form/' element={<FeedbackForm />} />

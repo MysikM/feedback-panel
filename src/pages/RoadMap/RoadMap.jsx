@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './road-map.scss'
 import RoadMapHeader from "../../components/RoadMapHeader/RoadMapHeader";
 import RoadMapListCategory from "../../components/RoadMapListCategory/RoadMapListCategory";
@@ -12,7 +12,8 @@ const RoadMap = () => {
     useEffect(()=>{
         setActiveCategoryList(roadmapsSectionList.find(el => el.title === activeCategory));
         },
-        [activeCategory])
+        [activeCategory]);
+
     return (
         <section className='roadmap'>
             <div className="roadmap--container container">
