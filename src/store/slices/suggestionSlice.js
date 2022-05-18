@@ -45,17 +45,25 @@ const suggestionSlice = createSlice({
         upvoteSuggestion: (state, action) => {
             state.sortProductRequest = state.sortProductRequest.map((item) => item.id === action.payload.id ? {...item,upvotes: item.upvoted ? item.upvotes - 2 : item.upvotes + 2, upvoted: !item.upvoted } : item)
         },
-        ascUpvotesSuggestion: (state, action) => {
+        ascUpvotesSuggestion: (state) => {
             state.sortProductRequest = state.sortProductRequest.sort((a,b) => b.upvotes - a.upvotes)
         },
-        descUpvotesSuggestion: (state, action) => {
+        descUpvotesSuggestion: (state) => {
             state.sortProductRequest = state.sortProductRequest.sort((a,b) => a.upvotes - b.upvotes)
         },
-        ascCommentSuggestion: (state, action) => {
+        ascCommentSuggestion: (state ) => {
             state.sortProductRequest = state.sortProductRequest.sort((a,b) => b.comments.length - a.comments.length)
         },
-        desCommentSuggestion: (state, action) => {
+        desCommentSuggestion: (state ) => {
             state.sortProductRequest = state.sortProductRequest.sort((a,b) =>  a.comments.length - b.comments.length)
+        },
+        addCommentToSuggestion: (state, action) => {
+            state.productRequests = state.productRequests.map((item) => item.id === +action.payload.postId ? {...item, comments: [...item.comments, action.payload.newComment]} : item )
+            state.sortProductRequest = [...state.productRequests];
+        },
+        addReplyToComment: (state, action) => {
+            state.productRequests = state.productRequests.map((item) =>  item.comments.id === action.payload.commentId ? item.comments.id?.replies.push(action.payload.newReply) : item )
+            state.sortProductRequest = [...state.productRequests];
         }
     },
     extraReducers: {
@@ -77,4 +85,6 @@ export const {
     descUpvotesSuggestion,
     ascCommentSuggestion,
     desCommentSuggestion,
+    addCommentToSuggestion,
+    addReplyToComment
 } = suggestionSlice.actions;

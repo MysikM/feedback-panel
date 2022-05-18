@@ -15,6 +15,10 @@ const FeedbackDetail = () => {
 
     useEffect(()=>{
         setSuggestionItem(productRequests.find(item => item.id === +id));
+    },[productRequests])
+
+    useEffect(()=>{
+        setSuggestionItem(productRequests.find(item => item.id === +id));
     },[id]);
 
     return (
@@ -23,7 +27,7 @@ const FeedbackDetail = () => {
                 <DetailNavigation />
                 <SuggestionItem {...suggestionItem} />
                 <CommentList count={suggestionItem.comments.length} comments={suggestionItem.comments}/>
-                <CommentAddForm />
+                <CommentAddForm postId={id} />
             </div>
         </section>
     );

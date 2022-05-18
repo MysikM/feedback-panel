@@ -1,11 +1,9 @@
 @use '../../sass' as *;
 
 .item--container {
-  @include flex(flex-start, space-between);
+  @include flex(flex-start, flex-start);
   position: relative;
-
-  @include tablet{
-    justify-content: flex-start;
+  @include tablet {
     align-items: center;
   }
 }
@@ -15,6 +13,7 @@
   &--item {
     position: relative;
     margin: 1.5rem 0;
+    width: 100%;
 
     @include tablet {
       margin: 1rem 0;
@@ -76,6 +75,7 @@
   }
 
   &--reply {
+    margin-left: auto;
     cursor: pointer;
     color: $blue;
     font-weight: 700;
@@ -84,9 +84,6 @@
       text-decoration: underline;
     }
 
-    @include tablet{
-      margin-left: auto;
-    }
   }
 
 }
