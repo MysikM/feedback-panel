@@ -43,6 +43,7 @@ const suggestionSlice = createSlice({
             state.sortProductRequest = [...state.productRequests.filter((item) => action.payload.category.includes(item.category))]
         },
         upvoteSuggestion: (state, action) => {
+            state.productRequests = state.sortProductRequest.map((item) => item.id === action.payload.id ? {...item,upvotes: item.upvoted ? item.upvotes - 2 : item.upvotes + 2, upvoted: !item.upvoted } : item)
             state.sortProductRequest = state.sortProductRequest.map((item) => item.id === action.payload.id ? {...item,upvotes: item.upvoted ? item.upvotes - 2 : item.upvotes + 2, upvoted: !item.upvoted } : item)
         },
         ascUpvotesSuggestion: (state) => {

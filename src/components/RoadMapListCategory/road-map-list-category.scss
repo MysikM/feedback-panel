@@ -1,0 +1,16 @@
+@use '../../sass' as *;
+
+.roadmap--category-list {
+  flex: 1 1 33%;
+}
+
+.category-list {
+
+  &--title {
+    color: $grey-darker;
+  }
+  &--subtitle {
+    margin-top: 4px;
+    color: $grey-dark;
+  }
+}

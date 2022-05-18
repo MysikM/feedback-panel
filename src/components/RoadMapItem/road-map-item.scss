@@ -1,0 +1,90 @@
+@use '../../sass' as *;
+
+.roadmap-item {
+  margin-top: 24px;
+  padding: 31px;
+  background-color: $white;
+  border-radius: 5px;
+  border-top: 6px solid transparent;
+
+  &.orange {
+    border-color: $orange;
+  }
+  &.purple {
+    border-color: $purple;
+  }
+  &.blue-light {
+    border-color: $blue-light;
+  }
+
+  &--category-title {
+    @include flex(center, flex-start);
+    column-gap: 16px;
+    color: $grey-dark;
+  }
+
+  &--circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  &--info {
+    h3 {
+      margin-top: 8px;
+      color: $grey-darker;
+    }
+    p{
+      margin-top: 4px;
+      color: $grey-dark;
+    }
+    div{
+      margin-top: 16px;
+      padding: 6px 16px 4px;
+      text-transform: capitalize;
+      background-color: $grey;
+      color: $blue;
+      border-radius: 10px;
+      font-weight: 700;
+      width: fit-content;
+    }
+    &:hover {
+      h3 {
+        color: $blue;
+      }
+    }
+  }
+
+  &--bottom {
+    margin-top: 16px;
+    @include flex(center, space-between);
+  }
+
+  &--btn {
+    padding: 7px 14px 5px;
+    background-color: $grey;
+    border-radius: 10px;
+    font-weight: 700;
+    color: $grey-darker;
+    img {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: $grey-hover;
+    }
+    &__active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
+  &--comment {
+    @include flex(center, flex-start);
+    font-weight: 700;
+    img {
+      margin-right: 8px;
+    }
+  }
+
+}
