@@ -1,0 +1,36 @@
+@use '../../sass' as *;
+
+.header {
+  @include flex(center, space-between);
+  padding: 27px 32px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: $grey-darkest;
+
+  &--back-btn {
+    color: $white;
+    font-weight: 700;
+    &:hover {
+      text-decoration: underline;
+    }
+    img {
+      margin-right: 16px;
+    }
+  }
+  &--title{
+    margin-top: 4px;
+    color: $white;
+  }
+  &--btn {
+    background-color: $purple;
+    color: $grey;
+    font-weight: 700;
+    transition: 0.2s ease-in-out;
+    padding: 12px 24px 10px;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $purple-hover;
+    }
+  }
+}

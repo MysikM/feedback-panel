@@ -1,1 +1,8 @@
 @use '../../sass' as *;
+
+.roadmap {
+
+  &--container {
+    padding: 78px 40px;
+  }
+}
