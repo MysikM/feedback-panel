@@ -62,7 +62,7 @@ const suggestionSlice = createSlice({
             state.sortProductRequest = [...state.productRequests];
         },
         addReplyToComment: (state, action) => {
-            state.productRequests = state.productRequests.map((item) =>  item.comments.id === action.payload.commentId ? item.comments.id?.replies.push(action.payload.newReply) : item )
+            state.productRequests = state.productRequests.map((item) => item.id === +action.payload.postId ? {...item, comments: item.comments.map((comment) => comment.id === +action.payload.commentId ? {...comment, replies: comment?.replies ? [...comment?.replies, action.payload.newReply] : [action.payload.newReply]} : comment )} : item)
             state.sortProductRequest = [...state.productRequests];
         }
     },

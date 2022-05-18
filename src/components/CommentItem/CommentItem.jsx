@@ -4,7 +4,7 @@ import ReplyCommentForm from "../ReplyCommentForm/ReplyCommentForm";
 import ReplyList from "../ReplyList/ReplyList";
 
 
-const CommentItem = ({content, user, replies}) => {
+const CommentItem = ({content, user, replies, id, postId}) => {
     const {image, name, username} = user;
     const [isReplyOnComment, setIsReplyOnComment] = useState(false);
     const replyToggle = () => {
@@ -30,7 +30,7 @@ const CommentItem = ({content, user, replies}) => {
             <p className="body-s comment--user-description tablet">
                 {content}
             </p>
-            {isReplyOnComment && (<ReplyCommentForm />)}
+            {isReplyOnComment && (<ReplyCommentForm postId={postId} commentId={id} replyingTo={username} />)}
             {replies?.length > 0 && (<ReplyList replies={replies} />)}
         </li>
     );
