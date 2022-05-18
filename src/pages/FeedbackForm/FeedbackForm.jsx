@@ -7,10 +7,12 @@ import iconNewFeedback from '../../assets/shared/icon-new-feedback.svg';
 import iconEditFeedback from '../../assets/shared/icon-edit-feedback.svg';
 import iconActiveCategory from '../../assets/shared/icon-check.svg';
 import {homeNavigations} from "../../data/data";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {removeSuggestion, addSuggestion, editSuggestion} from "../../store/slices/suggestionSlice";
 
 const FeedbackForm = () => {
     const params = useParams();
+    const dispatch = useDispatch();
     const {productRequests} = useSelector(state => state.suggestion);
     const [suggestionItem, setSuggestionItem] = useState('');
     const navigate = useNavigate();
@@ -33,6 +35,37 @@ const FeedbackForm = () => {
     const postFeedback = (e) => {
         e.preventDefault();
     };
+
+    const removeItem = () => {
+        dispatch(removeSuggestion({id: suggestionItem.id}))
+        navigate('/')
+    }
+
+    const edit = () => {
+        const edited = {
+            ...suggestionItem,
+            title,
+            category,
+            description: detail
+        }
+        dispatch(editSuggestion(edited));
+        navigate(-1);
+    }
+
+    const create = () => {
+        const newSuggestion = {
+            id: new Date().getTime(),
+            title,
+            category,
+            upvotes: 0,
+            upvoted: false,
+            status: "suggestion",
+            description: detail,
+            comments: [],
+        }
+        dispatch(addSuggestion(newSuggestion));
+        navigate(`/feedback/${newSuggestion.id}`);
+    }
 
     useEffect(()=>{
         if(params?.id) {
@@ -70,7 +103,7 @@ const FeedbackForm = () => {
                             </button>
                             <ul className={`feedback-form--dropdown-list ${isDropdownActive && 'feedback-form--dropdown-list__open'}`}>
                                 {homeNavigations.slice(1).map((item, i) => (
-                                    <li key={i} onClick={() => pickCategory(item)} className={`${category === item.category && '__active'}`}>
+                                    <li key={i} onClick={() => pickCategory(item.title)} className={`${category === item.category && '__active'}`}>
                                         {item.title}
                                         {category === item.category && <img src={iconActiveCategory} alt="icon active category"/>}
                                     </li>
@@ -87,9 +120,9 @@ const FeedbackForm = () => {
                     </InputGroupItem>
 
                     <div className="feedback-form--btns-container">
-                        {params?.id && (<button className='feedback-form--btn feedback-form--btn-delete'>Delete</button>)}
-                        <button className='feedback-form--btn feedback-form--btn-cancel'>Cancel</button>
-                        <button className='feedback-form--btn feedback-form--btn-save'>{params?.id ? 'Save Changes' : 'Add Feedback'}</button>
+                        {params?.id && (<button className='feedback-form--btn feedback-form--btn-delete' onClick={removeItem}>Delete</button>)}
+                        <button className='feedback-form--btn feedback-form--btn-cancel' onClick={() => navigate(-1)}>Cancel</button>
+                        <button type="submit" className='feedback-form--btn feedback-form--btn-save' onClick={ () => params?.id ? edit() : create() }>{params?.id ? 'Save Changes' : 'Add Feedback'}</button>
                     </div>
                 </form>
             </div>
