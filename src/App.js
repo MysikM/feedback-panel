@@ -7,18 +7,22 @@ import {ARRAY_SUGGESTION} from "./data/data";
 
 function App() {
   const dispatch = useDispatch();
-  const {productRequests} = useSelector(state => state.suggestion);
+  const {productRequests, sortProductRequest} = useSelector(state => state.suggestion);
 
   useEffect(()=>{
-    if(localStorage.getItem(ARRAY_SUGGESTION)) {
-      dispatch(addSuggestionFromLocaleStorage(JSON.parse(localStorage.getItem(ARRAY_SUGGESTION))))
+    if(localStorage.getItem('ARRAY_SUGGESTION')) {
+      console.log('test');
+      console.log(localStorage.getItem('ARRAY_SUGGESTION'));
+      console.log(JSON.parse(localStorage.getItem('ARRAY_SUGGESTION')));
+      dispatch(addSuggestionFromLocaleStorage(JSON.parse(localStorage.getItem('ARRAY_SUGGESTION'))));
     }
-    else if (productRequests.length === 0) {
+    else if (sortProductRequest.length === 0) {
+      console.log('LOAD DATA');
       dispatch(initialSuggestion());
     }
 
     return () => {
-      localStorage.setItem(ARRAY_SUGGESTION, JSON.stringify(productRequests));
+      localStorage.setItem('ARRAY_SUGGESTION', JSON.stringify(productRequests));
     }
   },[]);
   return (
