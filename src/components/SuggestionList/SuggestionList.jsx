@@ -1,19 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './suggestion-list.scss';
 import SuggestionItem from "../SuggestionItem/SuggestionItem";
-import {useDispatch, useSelector} from "react-redux";
-import {initialSuggestion} from "../../store/slices/suggestionSlice";
+import {useSelector} from "react-redux";
 import SuggestionEmpty from "../SuggestionEmpty/SuggestionEmpty";
 
 const SuggestionList = () => {
-    const dispatch = useDispatch();
     const {sortProductRequest} = useSelector(state => state.suggestion);
-
-    useEffect(()=>{
-        if (sortProductRequest.length === 0) {
-            dispatch(initialSuggestion());
-        }
-    },[]);
     return (
         <section className='suggestion--list'>
             {
