@@ -10,9 +10,7 @@ const SuggestionList = () => {
     const {sortProductRequest} = useSelector(state => state.suggestion);
 
     useEffect(()=>{
-        console.log('test')
         if (sortProductRequest.length === 0) {
-            console.log('WORK')
             dispatch(initialSuggestion());
         }
     },[]);

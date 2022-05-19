@@ -1,3 +1,4 @@
+export const ARRAY_SUGGESTION = 'ARRAY_SUGGESTION';
 export const homeNavigations = [
     {title: 'All', category: "all"},
     {title: 'UI', category: "ui"},

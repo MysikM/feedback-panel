@@ -4,7 +4,10 @@ export const initialSuggestion = createAsyncThunk(
     'suggestion/initialSuggestion',
     async () => {
         const response = await fetch("./data.json");
+        console.log(response.json());
+        console.log(await response.json());
         const data = await response.json();
+        console.log(data);
         return data.productRequests;
     }
 )
@@ -66,6 +69,10 @@ const suggestionSlice = createSlice({
             state.productRequests = state.productRequests.map((item) => item.id === +action.payload.postId ? {...item, comments: item.comments.map((comment) => comment.id === +action.payload.commentId ? {...comment, replies: comment?.replies ? [...comment?.replies, action.payload.newReply] : [action.payload.newReply]} : comment )} : item)
             state.sortProductRequest = [...state.productRequests];
         },
+        addSuggestionFromLocaleStorage: (state, action) => {
+            state.productRequests = [...action.payload];
+            state.sortProductRequest = [...state.productRequests];
+        }
     },
     extraReducers: {
         [initialSuggestion.fulfilled]: (state, action) => {
