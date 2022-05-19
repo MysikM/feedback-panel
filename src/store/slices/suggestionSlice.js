@@ -91,5 +91,6 @@ export const {
     ascCommentSuggestion,
     desCommentSuggestion,
     addCommentToSuggestion,
-    addReplyToComment
+    addReplyToComment,
+    addSuggestionFromLocaleStorage
 } = suggestionSlice.actions;
