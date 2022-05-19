@@ -20,11 +20,13 @@ function App() {
       console.log('LOAD DATA');
       dispatch(initialSuggestion());
     }
+  },[]);
 
-    return () => {
+  useEffect( ()=> {
+    if(sortProductRequest > 0) {
       localStorage.setItem('ARRAY_SUGGESTION', JSON.stringify(productRequests));
     }
-  },[]);
+  }, [productRequests])
   return (
     <Navigations />
   );
