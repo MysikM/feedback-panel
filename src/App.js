@@ -11,19 +11,15 @@ function App() {
 
   useEffect(()=>{
     if(localStorage.getItem('ARRAY_SUGGESTION')) {
-      console.log('test');
-      console.log(localStorage.getItem('ARRAY_SUGGESTION'));
-      console.log(JSON.parse(localStorage.getItem('ARRAY_SUGGESTION')));
       dispatch(addSuggestionFromLocaleStorage(JSON.parse(localStorage.getItem('ARRAY_SUGGESTION'))));
     }
     else if (sortProductRequest.length === 0) {
-      console.log('LOAD DATA');
       dispatch(initialSuggestion());
     }
   },[]);
 
   useEffect( ()=> {
-    if(sortProductRequest > 0) {
+    if(sortProductRequest.length > 0) {
       localStorage.setItem('ARRAY_SUGGESTION', JSON.stringify(productRequests));
     }
   }, [productRequests])
