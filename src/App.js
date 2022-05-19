@@ -2,7 +2,7 @@ import './App.scss';
 import Navigations from "./navigation/Navigations";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {initialSuggestion} from "./store/slices/suggestionSlice";
+import {addSuggestionFromLocaleStorage, initialSuggestion} from "./store/slices/suggestionSlice";
 import {ARRAY_SUGGESTION} from "./data/data";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 
   useEffect(()=>{
     if(localStorage.getItem(ARRAY_SUGGESTION)) {
-      dispatch(addSuggestionFromLocaleStorage(...JSON.parse(localStorage.getItem(ARRAY_SUGGESTION))))
+      dispatch(addSuggestionFromLocaleStorage(JSON.parse(localStorage.getItem(ARRAY_SUGGESTION))))
     }
     else if (productRequests.length === 0) {
       dispatch(initialSuggestion());
