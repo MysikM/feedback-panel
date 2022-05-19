@@ -12,7 +12,7 @@ const ReplyCommentForm = ({postId, commentId, replyingTo}) => {
             content,
             replyingTo,
             user: {
-                image: "/user-images/image-zena.jpg",
+                image: "https://lm-product-feedback-app.netlify.app/assets/user-images/image-zena.jpg",
                 name: "Zena Kelley",
                 username: "velvetround"
             }
